@@ -1,0 +1,57 @@
+// import THREE
+import * as THREE from 'https://threejsfundamentals.org/threejs/resources/threejs/r132/build/three.module.js';
+// import Orbit controls
+import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@0.121.1/examples/jsm/controls/OrbitControls.js';
+
+var scene = new THREE.Scene();
+var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+camera.position.z = 5;
+
+var renderer = new THREE.WebGLRenderer();
+renderer.setSize(window.innerWidth, window.innerHeight);
+document.body.appendChild(renderer.domElement);
+
+
+var geometry = new THREE.TetrahedronGeometry(1, 0);
+var material = new THREE.MeshToonMaterial({ color: 0x0000ff});
+
+var tetrahedron = new THREE.Mesh(geometry, material);
+scene.add(tetrahedron);
+
+
+var directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+directionalLight.position.set(1, 1, 1);
+scene.add(directionalLight);
+
+
+tetrahedron.position.set(2, 0, 0);
+
+
+var modelViewMatrix = new THREE.Matrix4();
+modelViewMatrix.makeRotationFromEuler(tetrahedron.rotation);
+modelViewMatrix.setPosition(tetrahedron.position);
+
+
+var normalMatrix = new THREE.Matrix3();
+normalMatrix.getNormalMatrix(modelViewMatrix);
+
+
+geometry.computeVertexNormals();
+geometry.normalsNeedUpdate = true;
+
+
+
+var animate = function () {
+  requestAnimationFrame(animate);
+  tetrahedron.rotation.x += 0.01;
+  tetrahedron.rotation.y += 0.01;
+  renderer.render(scene, camera);
+};
+
+var controls = new OrbitControls (camera, renderer.domElement);
+
+
+animate();
+//Eoin Smylie
+//This code was based off the given lab as well as the Threes online resource on 
+//tetrahedron geometry class.
