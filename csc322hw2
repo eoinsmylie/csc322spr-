@@ -1,0 +1,222 @@
+// import THREE
+import * as THREE from 'https://threejsfundamentals.org/threejs/resources/threejs/r132/build/three.module.js';
+// import Orbit controls
+import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@0.121.1/examples/jsm/controls/OrbitControls.js';
+// Set up the scene, camera, and renderer
+var scene = new THREE.Scene();
+var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+camera.position.z = 500;
+camera.position.x = -100;
+
+
+var renderer = new THREE.WebGLRenderer();
+renderer.setSize(window.innerWidth, window.innerHeight);
+document.body.appendChild(renderer.domElement);
+
+
+const material = new THREE.MeshBasicMaterial({color : 0x0000ff});
+const points = [];
+points.push(new THREE.Vector3( -27.5, 0, 0));
+points.push(new THREE.Vector3(27.5, 0, 0));
+points.push(new THREE.Vector3(27.5, 250, 0));
+points.push(new THREE.Vector3(-27.5, 250, 0));
+points.push(new THREE.Vector3(-27.5, 0, 0));
+points.push(new THREE.Vector3( -27.5, 0, 0));
+points.push(new THREE.Vector3(27.5, 0, 0));
+points.push(new THREE.Vector3(27.5, 250, 0));
+points.push(new THREE.Vector3(-27.5, 250, 0));
+points.push(new THREE.Vector3(-27.5, 0, 0));
+points.push(new THREE.Vector3( -27.5, 0, 0));
+points.push(new THREE.Vector3(27.5, 0, 0));
+points.push(new THREE.Vector3(27.5, 250, 0));
+points.push(new THREE.Vector3(-27.5, 250, 0));
+points.push(new THREE.Vector3(-27.5, 0, 0));
+
+
+
+const geometry = new THREE.BufferGeometry().setFromPoints(points);
+
+const line = new THREE.Mesh(geometry, material);
+
+
+// Create a directional light to highlight the issue
+var directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+directionalLight.position.set(1, 1, 1);
+scene.add(directionalLight);
+
+line.position.set(0, 0, 0);
+
+const material2 = new THREE.MeshBasicMaterial({color : 0x00ffff});
+const points2 = [];
+points2.push(new THREE.Vector3( -27.5, 0, -55));
+points2.push(new THREE.Vector3(27.5, 0, -55));
+points2.push(new THREE.Vector3(27.5, 250, -55));
+points2.push(new THREE.Vector3(-27.5, 250, -55));
+points2.push(new THREE.Vector3(-27.5, 0, -55));
+points2.push(new THREE.Vector3( -27.5, 0, -55));
+points2.push(new THREE.Vector3(27.5, 0, -55));
+points2.push(new THREE.Vector3(27.5, 250, -55));
+points2.push(new THREE.Vector3(-27.5, 250, -55));
+points2.push(new THREE.Vector3(-27.5, 0,-55));
+points2.push(new THREE.Vector3( -27.5, 0, -55));
+points2.push(new THREE.Vector3(27.5, 0, -55));
+points2.push(new THREE.Vector3(27.5, 250, -55));
+points2.push(new THREE.Vector3(-27.5, 250, -55));
+points2.push(new THREE.Vector3(-27.5, 0, -55));
+
+
+
+const geometry2 = new THREE.BufferGeometry().setFromPoints(points2);
+
+const line2 = new THREE.Mesh(geometry2, material2);
+line2.position.set(0,0,0);
+
+const material3 = new THREE.MeshBasicMaterial({color : 0x51CE45});
+const points3 = [];
+points3.push(new THREE.Vector3( 27.5, 0, -55));
+points3.push(new THREE.Vector3(27.5, 0, 0));
+points3.push(new THREE.Vector3(27.5, 250, 0));
+points3.push(new THREE.Vector3(27.5, 250, -55));
+points3.push(new THREE.Vector3(27.5, 0, -55));
+points3.push(new THREE.Vector3( 27.5, 0, -55));
+points3.push(new THREE.Vector3(27.5, 0, 0));
+points3.push(new THREE.Vector3(27.5, 250, 0));
+points3.push(new THREE.Vector3(27.5, 250, -55));
+points3.push(new THREE.Vector3(27.5, 0,-55));
+points3.push(new THREE.Vector3( 27.5, 0, -55));
+points3.push(new THREE.Vector3(27.5, 0, 0));
+points3.push(new THREE.Vector3(27.5, 250, 0));
+points3.push(new THREE.Vector3(27.5, 250, -55));
+points3.push(new THREE.Vector3(27.5, 0, -55));
+
+
+
+const geometry3 = new THREE.BufferGeometry().setFromPoints(points3);
+
+const line3 = new THREE.Mesh(geometry3, material3);
+line3.position.set(0,0,0);
+
+const material4 = new THREE.MeshBasicMaterial({color : new THREE.Color("rgb(255, 0, 0)")});
+const points4 = [];
+points4.push(new THREE.Vector3( -27.5, 0, -55));
+points4.push(new THREE.Vector3(-27.5, 0, 0));
+points4.push(new THREE.Vector3(-27.5, 250, 0));
+points4.push(new THREE.Vector3(-27.5, 250, -55));
+points4.push(new THREE.Vector3(-27.5, 0, -55));
+points4.push(new THREE.Vector3( -27.5, 0, -55));
+points4.push(new THREE.Vector3(-27.5, 0, 0));
+points4.push(new THREE.Vector3(-27.5, 250, 0));
+points4.push(new THREE.Vector3(-27.5, 250, -55));
+points4.push(new THREE.Vector3(-27.5, 0,-55));
+points4.push(new THREE.Vector3( -27.5, 0, -55));
+points4.push(new THREE.Vector3(-27.5, 0, 0));
+points4.push(new THREE.Vector3(-27.5, 250, 0));
+points4.push(new THREE.Vector3(-27.5, 250, -55));
+points4.push(new THREE.Vector3(-27.5, 0, -55));
+
+
+
+const geometry4 = new THREE.BufferGeometry().setFromPoints(points4);
+
+const line4 = new THREE.Mesh(geometry4, material4);
+line4.position.set(0,0,0);
+
+const material5 = new THREE.MeshBasicMaterial({color : new THREE.Color("rgb(25, 107,84)")});
+const points5 = [];
+points5.push(new THREE.Vector3( -27.5, 250, 0));
+points5.push(new THREE.Vector3(27.5, 250, 0));
+points5.push(new THREE.Vector3(1.71875, 305, -27.5));
+
+
+
+
+const geometry5 = new THREE.BufferGeometry().setFromPoints(points5);
+
+const line5 = new THREE.Mesh(geometry5, material5);
+line5.position.set(0,0,0);
+
+const material6 = new THREE.MeshBasicMaterial({color : 0xCD42B1});
+const points6 = [];
+points6.push(new THREE.Vector3( -27.5, 250, -55));
+points6.push(new THREE.Vector3(27.5, 250, -55));
+points6.push(new THREE.Vector3(1.71875, 305, -27.5));
+
+
+
+
+const geometry6 = new THREE.BufferGeometry().setFromPoints(points6);
+
+const line6 = new THREE.Mesh(geometry6, material6);
+line6.position.set(0,0,0);
+
+const material7 = new THREE.MeshBasicMaterial({color : 0xFBCB38});
+const points7 = [];
+points7.push(new THREE.Vector3( -27.5, 250, -55));
+points7.push(new THREE.Vector3(-27.5, 250, 0));
+points7.push(new THREE.Vector3(0, 305, -25.78125));
+
+
+
+
+const geometry7 = new THREE.BufferGeometry().setFromPoints(points7);
+
+const line7 = new THREE.Mesh(geometry7, material7);
+line7.position.set(0,0,0);
+
+const material8 = new THREE.MeshBasicMaterial({color : 0x3F0590});
+const points8 = [];
+points8.push(new THREE.Vector3( 27.5, 250, -55));
+points8.push(new THREE.Vector3(27.5, 250, 0));
+points8.push(new THREE.Vector3(0, 305, -25.78125));
+
+
+
+
+const geometry8 = new THREE.BufferGeometry().setFromPoints(points8);
+
+const line8 = new THREE.Mesh(geometry8, material8);
+line8.position.set(0,0,0);
+// Create the model-view matrix
+var modelViewMatrix = new THREE.Matrix4();
+modelViewMatrix.makeRotationFromEuler(line.rotation);
+modelViewMatrix.setPosition(line.position);
+
+// Calculate the normal matrix
+var normalMatrix = new THREE.Matrix3();
+normalMatrix.getNormalMatrix(modelViewMatrix);
+
+
+geometry.computeVertexNormals();
+geometry.normalsNeedUpdate = true;
+
+
+// Set up animation
+var animate = function () {
+  requestAnimationFrame(animate);
+
+  line.rotation.y += 0.01;
+  line2.rotation.y += 0.01;
+  line3.rotation.y += 0.01;
+  line4.rotation.y += 0.01;
+  line5.rotation.y += 0.01;
+  line6.rotation.y += 0.01;
+  line7.rotation.y += 0.01;
+  line8.rotation.y += 0.01;
+
+  renderer.render(scene, camera);
+};
+
+var controls = new OrbitControls (camera, renderer.domElement);
+
+scene.add(line);
+scene.add(line2);
+scene.add(line3);
+scene.add(line4);
+scene.add(line5);
+scene.add(line6);
+scene.add(line7);
+scene.add(line8);
+renderer.render(scene, camera);
+animate();
+//Used THREE documents and previous homework for reference
+//IDK how to make them all face the opposite direction
